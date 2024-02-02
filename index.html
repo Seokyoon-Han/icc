@@ -190,9 +190,10 @@
         }
         
         function running() {
-            var dangcheom = parseInt(document.getElementById('dangcheom').value, 10);
-            var whole = parseInt(document.getElementById('whole').value, 10);
-            var hogu = parseInt(document.getElementById('hogu').value, 10);
+            
+            var dangcheom = parseFloat(document.getElementById('dangcheom').value);
+            var whole = parseFloat(document.getElementById('whole').value);
+            var hogu = parseFloat(document.getElementById('hogu').value);
 
             if (!isPositiveInteger(whole) || !isPositiveInteger(hogu) || !isPositiveInteger(dangcheom)) {
                 alert("쿠지 개수는 0 이상의 정수로 입력해주세요!");
