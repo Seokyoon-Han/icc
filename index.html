@@ -29,8 +29,9 @@
             font-family: 'Gowun Dodum';
         }
         
-        h3{
-            margin-bottom:0;
+        h3 {
+            margin-top: 1vh;
+            margin-bottom: 1vh;
         }
         
         h4 {
@@ -53,9 +54,9 @@
         
         .img .inchilpan {
             position: absolute;
-            top: 80.5%;
+            top: 79%;
             left: 50%;
-            font-size: 3vmin;
+            font-size: min(2.6vh, 4.6vw);
             transform: translate(-50%, -50%);
             text-align: center;
             font-family: 'Gamja Flower';
@@ -69,7 +70,7 @@
         
         #dangcheom {
             text-align: center;
-            font-size: 3vmin;
+            font-size: 2.1vh;
             font-style: normal;
             color: rgb(121, 25, 25);
             border-radius: 10px;
@@ -82,10 +83,13 @@
             min-width: 120px;
             font-family: 'Gamja Flower';
         }
+        /*
+        폰트 사이즈는 vmin이 아니라 항상 vh로 고정해야하네!!!!!
+        */
         
         #whole {
             text-align: center;
-            font-size: 3vmin;
+            font-size: 2.1vh;
             font-style: normal;
             color: rgb(121, 25, 25);
             border-radius: 10px;
@@ -101,7 +105,7 @@
         
         #hogu {
             text-align: center;
-            font-size: 3vmin;
+            font-size: 2.1vh;
             font-style: normal;
             color: rgb(121, 25, 25);
             border-radius: 10px;
@@ -125,7 +129,7 @@
             border: none;
             width: 120px;
             height: 53px;
-            font-size: 30px;
+            font-size: min(30px, 7vw);
             border-radius: 15px;
             color: rgb(255, 213, 213);
             background-color: rgb(198, 115, 226);
@@ -141,7 +145,7 @@
             width: 132px;
             height: 58.3px;
             border-radius: 17.5px;
-            font-size: 33px;
+            font-size: min(33px, 7.7vw);
             margin-top: 7.35px;
             margin-bottom: -2.65px;
             text-align: center;
