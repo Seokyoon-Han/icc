@@ -190,6 +190,36 @@
             var dangcheomValue = document.getElementById('dangcheom').value;
             var wholeValue = document.getElementById('whole').value;
             var hoguValue = document.getElementById('hogu').value;
+            
+            // 양의 정수 여부를 확인하는 함수
+    	    function isPositiveInteger(value) {
+                return /^\d+$/.test(value) && parseInt(value, 10) >= 0;
+            }
+
+            // 유효성 검사
+            if (!isPositiveInteger(wholeValue) || !isPositiveInteger(hoguValue) || !isPositiveInteger(hoguValue)){
+                alert("쿠지 개수는 0 이상의 정수로 입력해주세요!");
+                return;
+            }
+
+            // 장난값 검사
+            if (dangcheomValue > wholeValue || hoguValue > wholeValue) {
+                alert("으으... 장난치지 마세요!");
+                return;
+            }
+
+            //0% 출력
+            if (dangcheomValue == 0) {
+                alert("다른 쿠지를 시도해 보시는 건 어떠신가요?");
+                return;
+            }
+
+            //100% 출력
+            if (hoguValue >= wholeValue - dangcheomValue + 1){
+                alert(hoguValue + "번 뽑았을 때 당첨 확률은 100%랍니다!")
+                return;
+            }
+
             let noDangcheom = 1;
             for (let i = 0; i < hoguValue; i++) {
                 noDangcheom *= (wholeValue - dangcheomValue) / wholeValue;
