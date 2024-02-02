@@ -185,44 +185,47 @@
         </div>
     </div>
     <script>
-function running() {
-    var dangcheom = parseInt(document.getElementById('dangcheom').value, 10);
-    var whole = parseInt(document.getElementById('whole').value, 10);
-    var hogu = parseInt(document.getElementById('hogu').value, 10);
-
-    if (!isPositiveInteger(whole) || !isPositiveInteger(hogu) || !isPositiveInteger(dangcheom)) {
-        alert("쿠지 개수는 0 이상의 정수로 입력해주세요!");
-        return;
-    }
-
-    if (dangcheom > whole || hogu > whole || hogu === 0) {
-        alert("으으... 장난치지 마세요!");
-        return;
-    }
-
-    if (dangcheom === 0) {
-        alert("다른 쿠지를 시도해 보시는 건 어떠신가요?");
-        return;
-    }
-
-    if (hogu >= whole - dangcheom + 1) {
-        alert(hogu + "번 뽑았을 때 당첨 확률은 100%랍니다!");
-    } 
-    
-    else {
-        let noDangcheom = 1;
-        for (let i = 0; i < hogu; i++) {
-            noDangcheom *= (whole - dangcheom) / whole;
-            whole -= 1;
+        function isPositiveInteger(value) {
+            return /^\d+$/.test(value) && parseInt(value, 10) >= 0;
         }
+        
+        function running() {
+            var dangcheom = parseInt(document.getElementById('dangcheom').value, 10);
+            var whole = parseInt(document.getElementById('whole').value, 10);
+            var hogu = parseInt(document.getElementById('hogu').value, 10);
 
-        let poss = 1 - noDangcheom;
-        let result = Math.floor(poss * 100000) / 1000;
+            if (!isPositiveInteger(whole) || !isPositiveInteger(hogu) || !isPositiveInteger(dangcheom)) {
+                alert("쿠지 개수는 0 이상의 정수로 입력해주세요!");
+                return;
+            }
 
-        alert(hogu + "번 뽑았을 때 당첨 확률은 " + result + "% 정도랍니다!");
-    }
+            if (dangcheom > whole || hogu > whole || hogu === 0) {
+                alert("으으... 장난치지 마세요!");
+                return;
+            }
 
-}
+            if (dangcheom === 0) {
+                alert("다른 쿠지를 시도해 보시는 건 어떠신가요?");
+                return;
+            }
+
+            if (hogu >= whole - dangcheom + 1) {
+                alert(hogu + "번 뽑았을 때 당첨 확률은 100%랍니다!");
+            } 
+    
+            else {
+                let noDangcheom = 1;
+                for (let i = 0; i < hogu; i++) {
+                    noDangcheom *= (whole - dangcheom) / whole;
+                    whole -= 1;
+                }
+                
+                let poss = 1 - noDangcheom;
+                let result = Math.floor(poss * 100000) / 1000;
+
+                alert(hogu + "번 뽑았을 때 당첨 확률은 " + result + "% 정도랍니다!");
+            }
+        }
     </script>
 </body>
 
