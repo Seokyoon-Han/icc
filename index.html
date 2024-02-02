@@ -186,7 +186,7 @@
     </div>
     <script>
         function isPositiveInteger(value) {
-            return /^\d+$/.test(value) && parseInt(value, 10) >= 0;
+            return /^(0|[1-9]\d*)$/.test(value) && value >= 0;
         }
         
         function running() {
