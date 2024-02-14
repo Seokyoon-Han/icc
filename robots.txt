@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://ichibankuji-calc.netlify.app/Sitemap.xml
